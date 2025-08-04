@@ -4,7 +4,7 @@ import numpy as np
 def ham_cr_PG_Oh_J_3_5(x0, x1):
 	J = 3.5
 	dim=int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 0.17407765595569785*x0 + 1.7232808737106584*x0*x1 - 0.17407765595569785*x0*np.abs(x1)
 	ham[0][1] = 0.
@@ -76,7 +76,7 @@ def ham_cr_PG_Oh_J_3_5(x0, x1):
 def ham_cr_PG_Oh_J_4(x0, x1):
 	J = 4.
 	dim=int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 0.2860387767736777*x0 + 2.1507845372965946*x0*x1 - 0.2860387767736777*x0*np.abs(x1)
 	ham[0][1] = 0.
@@ -165,7 +165,7 @@ def ham_cr_PG_Oh_J_4(x0, x1):
 def ham_cr_PG_Oh_J_7_5(x0, x1):
 	J = 7.5
 	dim=int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 1.3206309278036845*x0 + 4.864733772255436*x0*x1 - 1.3206309278036845*x0*np.abs(x1)
 	ham[0][1] = 0.
@@ -429,7 +429,7 @@ def ham_cr_PG_Oh_J_7_5(x0, x1):
 def ham_cr_PG_Oh_J_6(x0, x1):
 	J = 6.
 	dim=int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 0.848190570910832*x0 + 3.767605730590247*x0*x1 - 0.848190570910832*x0*np.abs(x1)
 	ham[0][1] = 0.
@@ -607,7 +607,7 @@ import numpy as np
 def ham_cr_PG_Oh_J_8(x0, x1):
 	J = 8.
 	dim=int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 1.4803570188057285*x0 + 5.209640186922028*x0*x1 - 1.4803570188057285*x0*np.abs(x1)
 	ham[0][1] = 0.
@@ -904,7 +904,7 @@ def ham_cr_PG_Oh_J_8(x0, x1):
 def ham_cr_PG_C4v_J_4(x0, x1, x2, x3, x4, x5):
 	J = 4
 	dim=2*J+1
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 4.786344211304794*x0*x1 + 2.8160379844863472*x0*x3 + 0.8090398349558905*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3) - 1.*np.abs(x4))*np.sign(x5)
 	ham[0][1] = 0.
@@ -992,7 +992,7 @@ def ham_cr_PG_C4v_J_4(x0, x1, x2, x3, x4, x5):
 def ham_cr_PG_C4v_J_3_5(x0, x1, x2, x3, x4, x5):
 	J = 3.5
 	dim=int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 4.320493798938574*x0*x1 + 2.256304299271065*x0*x3 + 0.49236596391733095*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3) - 1.*np.abs(x4))*np.sign(x5)
 	ham[0][1] = 0.
@@ -1064,7 +1064,7 @@ def ham_cr_PG_C4v_J_3_5(x0, x1, x2, x3, x4, x5):
 def ham_cr_PG_C4v_J_7_5(x0, x1, x2, x3, x4, x5):
 	J = 7.5
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 7.409585736349484*x0*x1 + 6.36943164204817*x0*x3 + 3.7353083379786685*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3) - 1.*np.abs(x4))*np.sign(x5)
 	ham[0][1] = 0.
@@ -1328,7 +1328,7 @@ def ham_cr_PG_C4v_J_7_5(x0, x1, x2, x3, x4, x5):
 def ham_cr_PG_C4v_J_6(x0, x1, x2, x3, x4, x5):
 	J = 6.
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 6.391959234627741*x0*x1 + 4.932953842622631*x0*x3 + 2.3990452177181543*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3) - 1.*np.abs(x4))*np.sign(x5)
 	ham[0][1] = 0.
@@ -1505,7 +1505,7 @@ def ham_cr_PG_C4v_J_6(x0, x1, x2, x3, x4, x5):
 def ham_cr_PG_C4v_J_8(x0, x1, x2, x3, x4, x5):
 	J = 8.
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 7.72328445721233*x0*x1 + 6.821020142872595*x0*x3 + 4.1870819462985285*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3) - 1.*np.abs(x4))*np.sign(x5)
 	ham[0][1] = 0.
@@ -1802,7 +1802,7 @@ def ham_cr_PG_C4v_J_8(x0, x1, x2, x3, x4, x5):
 def ham_cr_PG_D3h_J_4(x0, x1, x2, x3, x4):
 	J = 4.
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 4.786344211304794*x0*x1 + 2.8160379844863472*x0*x2 + 0.8090398349558905*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3))*np.sign(x4)
 	ham[0][1] = 0.
@@ -1891,7 +1891,7 @@ def ham_cr_PG_D3h_J_4(x0, x1, x2, x3, x4):
 def ham_cr_PG_D3h_J_3_5(x0, x1, x2, x3, x4):
 	J = 3.5
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 4.320493798938574*x0*x1 + 2.256304299271065*x0*x2 + 0.49236596391733095*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3))*np.sign(x4)
 	ham[0][1] = 0.
@@ -1963,7 +1963,7 @@ def ham_cr_PG_D3h_J_3_5(x0, x1, x2, x3, x4):
 def ham_cr_PG_D3h_J_7_5(x0, x1, x2, x3, x4):
 	J = 7.5
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 7.409585736349484*x0*x1 + 6.36943164204817*x0*x2 + 3.7353083379786685*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3))*np.sign(x4)
 	ham[0][1] = 0.
@@ -2227,7 +2227,7 @@ def ham_cr_PG_D3h_J_7_5(x0, x1, x2, x3, x4):
 def ham_cr_PG_D3h_J_6(x0, x1, x2, x3, x4):
 	J = 6.
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 6.391959234627741*x0*x1 + 4.932953842622631*x0*x2 + 2.3990452177181543*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3))*np.sign(x4)
 	ham[0][1] = 0.
@@ -2404,7 +2404,7 @@ def ham_cr_PG_D3h_J_6(x0, x1, x2, x3, x4):
 def ham_cr_PG_D3h_J_8(x0, x1, x2, x3, x4):
 	J = 8.
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 7.72328445721233*x0*x1 + 6.821020142872595*x0*x2 + 4.1870819462985285*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3))*np.sign(x4)
 	ham[0][1] = 0.
@@ -2701,7 +2701,7 @@ def ham_cr_PG_D3h_J_8(x0, x1, x2, x3, x4):
 def ham_cr_PG_Oh_J_4_5(x0, x1):
 	J = 4.5
 	dim=int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 0.41286141192238524*x0 + 2.570679211490926*x0*x1 - 0.41286141192238524*x0*np.abs(x1)
 	ham[0][1] = 0.
@@ -2809,7 +2809,7 @@ def ham_cr_PG_Oh_J_4_5(x0, x1):
 def ham_cr_PG_C4v_J_4_5(x0, x1, x2, x3, x4, x5):
 	J = 4.5
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 5.222329678670935*x0*x1 + 3.365809164030446*x0*x3 + 1.1677484162422844*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3) - 1.*np.abs(x4))*np.sign(x5)
 	ham[0][1] = 0.
@@ -2917,7 +2917,7 @@ def ham_cr_PG_C4v_J_4_5(x0, x1, x2, x3, x4, x5):
 def ham_cr_PG_D3h_J_4_5(x0, x1, x2, x3, x4):
 	J = 4.5
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 5.222329678670935*x0*x1 + 3.365809164030446*x0*x2 + 1.1677484162422844*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2) - 1.*np.abs(x3))*np.sign(x4)
 	ham[0][1] = 0.
@@ -3025,7 +3025,7 @@ def ham_cr_PG_D3h_J_4_5(x0, x1, x2, x3, x4):
 def ham_cr_PG_C4v_J_2_5(x0, x1, x2, x3):
 	J = 2.5
 	dim = int(2*J+1)
-	ham = np.arange(dim*dim, dtype=np.float)
+	ham = np.arange(dim*dim, dtype=np.float64)
 	ham = ham.reshape(dim,dim)
 	ham[0][0] = 3.273268353539885*x0*x1 + 1.1338934190276815*x0*np.abs(1. - 1.*np.abs(x1) - 1.*np.abs(x2))*np.sign(x3)
 	ham[0][1] = 0.

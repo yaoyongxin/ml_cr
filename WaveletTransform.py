@@ -12,13 +12,14 @@ def cwt(data, channels=6, wavelet='morl'):
     Args:
         data: 1D array containing each dataset
         channels: number of channels in the output image (susc, spec heat, magnetization at 4 temps)
-        waveletname: mother wavelet function to be used Can be any from 
+        waveletname: mother wavelet function to be used Can be any from
             https://pywavelets.readthedocs.io/en/latest/ref/wavelets.html, specifically pywt.wavelist()
 
     Returns:
         Input data reshaped into a (shape x shape) image with 'channels' channels
     """
     shape = data.shape[1]//channels
+
     size = data.shape[0]
     scales = [1.09051, 1.18921, 1.29684, 1.41421, 1.54221, 1.68179, 1.83401, 2., \
 		2.18102, 2.37841, 2.59368, 2.82843, 3.08442, 3.36359, 3.66802, 4., \
@@ -39,20 +40,20 @@ def cwt(data, channels=6, wavelet='morl'):
             data_cwt[i, :, :, j] = coeff
 
     return data_cwt
-	
-	
+
+
 if __name__=='__main__':
 	parser = argparse.ArgumentParser()
     # Command line arguments
 	parser.add_argument("input_dir", type=str, help="Input directory")
 	parser.add_argument("output_dir", type=str, help="Ouptut directory")
 	parser.add_argument("-s", "--save_mean", type=bool, default=True, help="True to save mean and std for x, y")
-	
+
 	args = parser.parse_args()
-	INPUT_DIR = args.train_dir
+	INPUT_DIR = args.input_dir
 	OUTPUT_DIR = args.output_dir
 	SAVE = args.save_mean
-	
+
 	x = np.array(pd.read_csv(os.path.join(INPUT_DIR, "generated_data.csv"), header=None))
 	y = np.array(pd.read_csv(os.path.join(INPUT_DIR, "generated_targets.csv"), header=None))
 	channels = len(x[0])//64
@@ -61,7 +62,7 @@ if __name__=='__main__':
 
 	# center the image data for each channel (mean of zero)
 	x_mean = np.mean(x, axis=(0,1,2), keepdims=True)
-	
+
 	# normalize each of the targets (mean of zero and std of one)
 	y_mean = np.mean(y, axis=(0,), keepdims=True)
 	y_std = np.std(y, axis=(0,), keepdims=True)
@@ -70,6 +71,6 @@ if __name__=='__main__':
 		np.save(os.path.join(OUTPUT_DIR, "x_mean.npy"), x_mean)
 		np.save(os.path.join(OUTPUT_DIR, "y_mean.npy"), y_mean)
 		np.save(os.path.join(OUTPUT_DIR, "y_std.npy"), y_std)
-	
+
 	savez_compressed(os.path.join(OUTPUT_DIR, "generated_data_cwt.npz"), x)
 	savez_compressed(os.path.join(OUTPUT_DIR, "generated_targets_cwt.npz"), y)
